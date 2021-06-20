@@ -9,14 +9,22 @@ const space = (item) => {
 	else 
 {return false}}
 
+let turn = true
+
+const change = (item) => {if (space(item) === false){
+	turn = !turn; return turn
+}
+
+}
+
 box.forEach(item => 
 	{item.addEventListener('click', event => {
 		const spc = space(item)
-		let turn = false
-		if (spc === false && turn === false){
-			turn = !turn && x(item)
-		} else if (spc === false && turn === true){
-			turn = !turn && o(item)
+		const turner = change(item)
+		if (spc === false && turner === false){
+			x(item)
+		} else if (spc === false && turner === true){
+			o(item)
 		} else {return null}
 	})
 });
