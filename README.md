@@ -1,2 +1,2 @@
 # tic-tac-toe
-A very small tic tac toe game.
+A small tic tac toe game that i designed for fun.

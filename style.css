@@ -2,16 +2,17 @@
 html, body {
     margin: 0;
     height: 100%;
-    background: linear-gradient(to bottom right, #00FF80, #FF007F);
+	background: linear-gradient(to bottom right, #00FF80, #FF007F);
 }
 
 .game{
+	position: relative;
 	display: grid;
 	height: 500px;
 	width: 500px;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr 1fr;
-
+	z-index: 1;
 
 }
 
@@ -28,6 +29,9 @@ html, body {
 
 .box {
  margin: 5px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .box1{
@@ -78,32 +82,26 @@ html, body {
 
 .x {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .x:after {
     content: "x";
     font-size: 100px; 
  	text-decoration-color: black;
-    text-align: center;
     font-family: Sans-serif;
+	margin-bottom: 15px;
 }
 
 .o {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	position: relative; 
 }
 
 .o:after {
     content: "o";
     font-size: 100px; 
  	text-decoration-color: black;
-    text-align: center;
     font-family: Sans-serif;
+	margin-bottom: 15px;
 }
 
 .btn {
@@ -116,9 +114,65 @@ html, body {
 	font-size: 20px;
 	font-family: sans-serif;
 	 box-shadow: 0 5px 15px rgba(0,0,0,0.8);
-	 background-color: transparent;
+	 background-color: #808080;
+	 opacity: 0.6;
 }
 
 .btn:hover {
-	font-size: 25px
+	transition: 0.3s;
+	opacity: 1;
+}
+
+.things {
+	position:relative
+}
+
+#overlay {
+	position: absolute;
+	z-index: 2; 
+  }
+
+.HW500 {
+	height: 500px;
+	width: 500px;
+}
+
+.columns {
+	display: grid; 
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.rows {
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.vert {
+	display:grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+}
+
+.winingLineVert {
+border: 8px solid black;
+margin: 15px auto;
+}
+
+.winingLineHor {
+	border: 8px solid black;
+	margin: auto 15px;
+}
+
+.winingLineDiag1 {
+	border: 9px solid black;
+	margin: auto 10px;
+	transform: rotate(45deg);
+	background-color: black;
+}
+
+.winingLineDiag2 {
+	border: 9px solid black;
+	margin: auto 10px;
+	transform: rotate(-45deg);
+	background-color: black;
 }
